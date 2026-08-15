@@ -1,0 +1,185 @@
+/* src/app/globals.css  */
+
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  /* Raio de borda padrão para elementos */
+  --radius: 0.5rem;
+
+  /* CORES BASE */
+  --background: #f7f7f7; /* Cor de fundo principal da aplicação */
+  --foreground: #525252; /* Cor de texto principal (contraste com o fundo) */
+
+  /* CARDS */
+  --card: #ffffff; /* Cor de fundo para cards/containers */
+  --card-foreground: #8a8a8a; /* Cor de texto para conteúdo dentro de cards */
+
+  /* POPOVERS/MODAIS */
+  --popover: #ffffff; /* Cor de fundo para popovers/modais */
+  --popover-foreground: #777777; /* Cor de texto para popovers */
+
+  /* CORES PRIMÁRIAS */
+  --primary: #7dbea9; /* Cor primária principal (destaque) botões princiais (ver mais, salvar,*/
+  --primary-foreground: #ffffff; /* Cor de texto sobre o primário */
+
+  /* CORES SECUNDÁRIAS */
+  --secondary: #7578a9; /* Cor secundária (botões secundários, etc) utilizada em botões que levam a ações ( editar, detalhar, etc ... ) */
+  --secondary-foreground: #ffffff; /* Texto sobre o secundário */
+
+  /* ELEMENTOS MUTED/INATIVOS */
+  --muted: #c2c2c2; /* Cor para elementos desativados/fracos */
+  --muted-foreground: #c2c2c2; /* Texto para elementos desativados */
+
+  /* CORES DE DESTAQUE (ACCENT) */
+  --accent: #74afb4; /* Cor de destaque complementar */
+  --accent-foreground: #ffffff; /* Texto sobre o accent */
+
+  /* CORES DESTRUTIVAS/ERROS */
+  --destructive: #d03535; /* Cor para ações destrutivas (ex: deletar) */
+  --destructive-foreground: #891a1a; /* Texto sobre fundo destrutivo */
+
+  /* BORDAS E INPUTS */
+  --border: #ebebeb; /* Cor padrão para bordas */
+  --input: #d8d8d8; /* Cor para inputs/controles de formulário */
+  --ring: #616f89; /* Cor para focus rings (contorno ao focar elementos) */
+
+  /* CORES PARA GRÁFICOS (Séries 1-5) */
+  --chart-1: #999fcc; /* Cor para série 1 em gráficos */
+  --chart-2: #7a97a8; /* Cor para série 2 em gráficos */
+  --chart-3: #7dc5a5; /* Cor para série 3 em gráficos */
+  --chart-4: #57667f; /* Cor para série 4 em gráficos */
+  --chart-5: #6466a0; /* Cor para série 5 em gráficos */
+
+  /* SIDEBAR/MENU LATERAL */
+  --sidebar: #ffffff; /* Cor de fundo da sidebar */
+  --sidebar-foreground: #747474; /* Cor de texto da sidebar */
+  --sidebar-primary: #7dbfa9; /* Cor primária específica para sidebar */
+  --sidebar-primary-foreground: hsl(0, 0%, 100%); /* Texto sobre o primário da sidebar */
+  --sidebar-accent: hsl(284 8% 81%); /* Cor de destaque da sidebar */
+  --sidebar-accent-foreground: #363636; /* Texto sobre o accent da sidebar */
+  --sidebar-border: hsl(0, 0%, 28%); /* Cor de borda da sidebar */
+  --sidebar-ring: #f5f5f5; /* Cor para focus rings na sidebar */
+}
+
+.dark {
+  --background: #292929;
+  --foreground: #ffffff;
+  --card: #121212;
+  --card-foreground: #b8b8b8;
+  --popover: #121212;
+  --popover-foreground: #121212;
+  --primary: #598375;
+  --primary-foreground: #d8d8d8;
+  --secondary: #7f80a7;
+  --secondary-foreground: #ffffff;
+  --muted: #363636;
+  --muted-foreground: #f3f3f3;
+  --accent: #74afb4;
+  --accent-foreground: #ffffff;
+  --destructive: #c72323;
+  --destructive-foreground: #631212;
+  --border: #2b2b2b;
+  --input: #4d4d4d;
+  --ring: #839fd2;
+  --chart-1: #8dabe8;
+  --chart-2: #7794a6;
+  --chart-3: #85dbb6;
+  --chart-4: #8eb6f5;
+  --chart-5: #8d90dd;
+  --sidebar: #181818;
+  --sidebar-foreground: #e2e2e2;
+  --sidebar-primary: #77b19e;
+  --sidebar-primary-foreground: #77b19e;
+  --sidebar-accent: #77b19e;
+  --sidebar-accent-foreground: hsl(0, 0%, 96%);
+  --sidebar-border: hsl(0, 0%, 12%);
+  --sidebar-ring: #232323;
+}
+
+.validate-password [aria-label='Close'] {
+  display: none !important;
+  width: 0px !important;
+}
+
+/* Esconde completamente os botões da scrollbar */
+::-webkit-scrollbar-button {
+  display: none !important;
+}
+
+/* Track (trilha) */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle (alça) */
+::-webkit-scrollbar-thumb {
+  background: #b3b3b3;
+  border-radius: 1000rem !important;
+}
+
+/* Handle no hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a0;
+}
+
+/* Define a largura da scrollbar */
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-size: cover;
+    background-position: end;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+}
