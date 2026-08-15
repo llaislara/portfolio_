@@ -14,3 +14,20 @@ content:
       - name: link
         label: Link do Projeto
         type: string
+
+media: public/uploads
+content:
+  - name: projetos
+    label: Projetos / Selected Works
+    type: collection
+    path: content/projetos
+    fields:
+      - name: title
+        label: Título do Projeto
+        type: string
+      - name: description
+        label: Descrição
+        type: text
+      - name: link
+        label: Link do Projeto
+        type: string
