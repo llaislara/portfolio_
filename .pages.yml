@@ -1,33 +1,231 @@
 media: public/uploads
 content:
+  # ==========================================
+  # 1. PÁGINA INICIAL [TIPO ÚNICO]
+  # ==========================================
+  - name: home
+    label: 1. Página Inicial
+    type: file
+    path: content/home.json
+    fields:
+      - name: foto
+        label: Foto de Apresentação
+        type: image
+      - name: alt_foto
+        label: Texto Alternativo da Foto
+        type: string
+      - name: cargo
+        label: Descrição Profissional (Cargo)
+        type: string
+      - name: resumo
+        label: Texto de Apresentação (Resumo)
+        type: rich-text
+      - name: cv
+        label: Download do CV
+        type: file
+      - name: email
+        label: E-mail para contato
+        type: string
+      - name: social_links
+        label: Links Sociais
+        type: object
+        list: true
+        fields:
+          - name: nome
+            label: Nome da Rede (ex. LinkedIn, GitHub)
+            type: string
+          - name: url
+            label: URL
+            type: string
+
+  # ==========================================
+  # 2. PORTFÓLIO DE PROJETOS [COLEÇÃO]
+  # ==========================================
   - name: projetos
-    label: Projetos / Selected Works
+    label: 2. Portfólio de Projetos
     type: collection
     path: content/projetos
     fields:
       - name: title
-        label: Título do Projeto
+        label: Título
+        type: string
+      - name: subtitle
+        label: Subtítulo
+        type: string
+      - name: cover
+        label: Imagem de Capa
+        type: image
+      - name: gallery
+        label: Galeria (Imagens secundárias)
+        type: object
+        list: true
+        fields:
+          - name: image
+            label: Imagem
+            type: image
+      - name: tags
+        label: Tags/Tecnologias (Separe por vírgulas, ex. React, FastAPI, Python)
         type: string
       - name: description
-        label: Descrição
-        type: text
-      - name: link
-        label: Link do Projeto
+        label: Descrição (Desafios, Arquitetura, Soluções)
+        type: rich-text
+      - name: repo_link
+        label: Link do Repositório (Opcional)
+        type: string
+      - name: prod_link
+        label: Link de Produção (Opcional)
         type: string
 
-media: public/uploads
-content:
-  - name: projetos
-    label: Projetos / Selected Works
-    type: collection
-    path: content/projetos
+  # ==========================================
+  # 3. SOBRE MIM [TIPO ÚNICO]
+  # ==========================================
+  - name: sobre
+    label: 3. Sobre Mim
+    type: file
+    path: content/sobre.json
     fields:
-      - name: title
-        label: Título do Projeto
-        type: string
       - name: description
-        label: Descrição
+        label: Texto Descritivo
+        type: rich-text
+      - name: cv_alternativo
+        label: Download do CV (Opcional)
+        type: file
+
+  # ==========================================
+  # 4. EXPERIÊNCIA PROFISSIONAL [COLEÇÃO]
+  # ==========================================
+  - name: experiencias
+    label: 4. Experiência Profissional
+    type: collection
+    path: content/experiencias
+    fields:
+      - name: cargo
+        label: Cargo
+        type: string
+      - name: empresa
+        label: Empresa
+        type: string
+      - name: start_date
+        label: Data de Início
+        type: date
+      - name: end_date
+        label: Data de Término
+        type: date
+      - name: is_current
+        label: Emprego Atual?
+        type: boolean
+      - name: description
+        label: Descrição das atividades (Impactos e liderança)
+        type: rich-text
+
+  # ==========================================
+  # 5. FORMAÇÃO ACADÊMICA [COLEÇÃO]
+  # ==========================================
+  - name: formacao
+    label: 5. Formação Acadêmica
+    type: collection
+    path: content/formacao
+    fields:
+      - name: curso
+        label: Grau/Curso
+        type: string
+      - name: instituicao
+        label: Instituição
+        type: string
+      - name: start_year
+        label: Ano de Início
+        type: number
+      - name: end_year
+        label: Ano de Conclusão
+        type: number
+      - name: description
+        label: Linha de Pesquisa / Descrição
         type: text
+
+  # ==========================================
+  # 6. COMPETÊNCIAS TÉCNICAS [COLEÇÃO]
+  # ==========================================
+  - name: skills
+    label: 6. Competências Técnicas
+    type: collection
+    path: content/skills
+    fields:
+      - name: grupo
+        label: Nome do Grupo (ex. Frontend, Backend)
+        type: string
+      - name: competencias
+        label: Competências (Separe por vírgulas)
+        type: string
+
+  # ==========================================
+  # 7. CERTIFICAÇÕES [COLEÇÃO]
+  # ==========================================
+  - name: certificacoes
+    label: 7. Certificações
+    type: collection
+    path: content/certificacoes
+    fields:
+      - name: nome
+        label: Nome
+        type: string
+      - name: instituicao
+        label: Instituição
+        type: string
+      - name: data
+        label: Data
+        type: date
+      - name: credencial
+        label: Link ou Arquivo da Credencial
+        type: string
+
+  # ==========================================
+  # 8. IDIOMAS [COLEÇÃO]
+  # ==========================================
+  - name: idiomas
+    label: 8. Idiomas
+    type: collection
+    path: content/idiomas
+    fields:
+      - name: nome
+        label: Idioma
+        type: string
+      - name: proficiencia
+        label: Proficiência
+        type: select
+        options:
+          - Básico
+          - Intermediário
+          - Avançado
+          - Fluente
+
+  # ==========================================
+  # 9. ATUAÇÕES / PUBLICAÇÕES [COLEÇÃO]
+  # ==========================================
+  - name: atuacoes
+    label: 9. Projetos, Lideranças e Publicações
+    type: collection
+    path: content/atuacoes
+    fields:
+      - name: categoria
+        label: Categoria
+        type: select
+        options:
+          - Pesquisa Acadêmica
+          - Voluntariado
+          - Publicação
+          - Liderança
+      - name: titulo
+        label: Título
+        type: string
+      - name: organizacao
+        label: Organização
+        type: string
+      - name: data
+        label: Data
+        type: date
+      - name: descricao
+        label: Descrição
+        type: rich-text
       - name: link
-        label: Link do Projeto
+        label: Link Externo (Opcional)
         type: string
